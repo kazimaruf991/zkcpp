@@ -35,7 +35,6 @@ public:
         const std::string& encoding = "UTF-8");
 
     ZKDevice(const std::string& ip);
-    ZKDevice(const std::string& ip, uint16_t port, int password);
 
     // Public flags
     sockaddr_in address{};
