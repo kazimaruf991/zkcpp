@@ -29,7 +29,7 @@ std::string formatTimestamp(const std::tm& t) {
 
 int main() {
 	std::string ip = ; //Add machine ip, eg.- "192.168.1.201"
-    int port = 4307;
+    int port = 4370;
     int password = 0;
 
     ZKDevice zk(ip, port, 60, password);
