@@ -76,10 +76,6 @@ ZKDevice::ZKDevice(const std::string& ip)
 	: ZKDevice(ip, 4370, 60, 0, false, false, false, "UTF-8") {
 }
 
-ZKDevice::ZKDevice(const std::string& ip, uint16_t port, int password)
-	: ZKDevice(ip, port, 60, password, false, false, false, "UTF-8") {
-}
-
 std::vector<uint8_t> ZKDevice::makeCommKey(uint32_t key, uint32_t session_id, uint8_t ticks) {
 	uint32_t k = 0;
 
