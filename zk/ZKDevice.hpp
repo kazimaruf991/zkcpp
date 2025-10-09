@@ -26,9 +26,9 @@ class ZKDevice {
 public:
     // Constructors
     ZKDevice(const std::string& ip,
-        uint16_t port = 43107,
+        uint16_t port = 4370,
         int timeout = 60,
-        int password = 102159,
+        int password = 0,
         bool forceUdp = false,
         bool ommitPing = false,
         bool verbose = false,
