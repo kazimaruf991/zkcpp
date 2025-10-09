@@ -16,7 +16,7 @@ make
 
 ```cpp
 std::string ip = ; // Add machine IP, e.g. "192.168.1.201"
-int port = 4307;
+int port = 4370;
 int password = 0;
 ```
 
