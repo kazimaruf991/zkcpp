@@ -4,6 +4,24 @@ zkcpp is a C++ library that ports the core functionality of the [pyzk](https://g
 
 ---
 
+## ⚙️ Environment Setup
+
+### ▶️ Termux (Android)
+
+```bash
+pkg update
+pkg install clang make cmake git
+```
+---
+
+### 🐧 Linux (Ubuntu/Debian)
+
+```bash
+sudo apt update
+sudo apt install clang make cmake git
+```
+---
+
 ## 🛠️ Build & Run
 
 ```bash
