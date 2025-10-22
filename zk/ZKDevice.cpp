@@ -753,7 +753,7 @@ bool ZKDevice::readSizes() {
 	if (data.size() >= 12) {
 		std::vector<Struct::Value> faceFields = Struct::unpack("<3i", std::vector<uint8_t>(data.begin(), data.begin() + 12));
 		faces = faceFields[0].i;
-		fingersCap = faceFields[2].i;
+		facesCap = faceFields[2].i;
 	}
 
 	return true;
