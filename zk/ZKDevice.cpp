@@ -899,7 +899,7 @@ bool ZKDevice::refreshData() {
 	}
 }
 
-bool ZKDevice::setUser(int uid, std::string& name, int privilege, std::string& password, std::string& group_id, std::string& user_id, uint32_t card) {
+bool ZKDevice::setUser(int uid, std::string& name, int privilege, std::string& userPassword, std::string& group_id, std::string& user_id, uint32_t card) {
 	constexpr uint16_t command = DeviceConstant::CMD_USER_WRQ;
 
 	if (uid < 0) {
@@ -925,7 +925,7 @@ bool ZKDevice::setUser(int uid, std::string& name, int privilege, std::string& p
 				{
 					Struct::Value::fromInt(uid),
 					Struct::Value::fromInt(static_cast<uint8_t>(privilege)),
-					Struct::Value::fromBytes(toBytes(password)),
+					Struct::Value::fromBytes(toBytes(userPassword)),
 					Struct::Value::fromBytes(toBytes(name)),
 					Struct::Value::fromInt(card),
 					Struct::Value::fromInt(static_cast<uint8_t>(group)),
@@ -943,7 +943,7 @@ bool ZKDevice::setUser(int uid, std::string& name, int privilege, std::string& p
 	else {
 		std::vector<uint8_t> name_pad = toBytes(name); name_pad.resize(24, 0);
 		std::vector<uint8_t> card_bytes = Struct::pack("I", { Struct::Value::fromInt(card) });
-		std::vector<uint8_t> password_bytes = toBytes(password); password_bytes.resize(8, 0);
+		std::vector<uint8_t> password_bytes = toBytes(userPassword); password_bytes.resize(8, 0);
 		card_bytes = { card_bytes.begin(), card_bytes.begin() + 4 };
 		std::vector<uint8_t> group_bytes(group_id.begin(), group_id.end());
 		group_bytes.resize(7, 0);
