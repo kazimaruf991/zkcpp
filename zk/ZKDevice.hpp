@@ -111,7 +111,7 @@ public:
         int uid,
         std::string& name,
         int privilege,
-        std::string& password,
+        std::string& userPassword,
         std::string& group_id,
         std::string& user_id,
         uint32_t card
