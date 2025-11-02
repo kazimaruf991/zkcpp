@@ -189,3 +189,25 @@ std::vector<uint8_t> SocketWrapper::recvFrom(size_t size) {
 int SocketWrapper::getSocket() const {
     return sockfd;
 }
+
+bool SocketWrapper::isConnected() const {
+    if (sockfd < 0) return false;
+    int error = 0;
+    socklen_t len = sizeof(error);
+    if (getsockopt(sockfd, SOL_SOCKET, SO_ERROR, &error, &len) < 0 || error != 0) {
+        return false;
+    }
+
+    char buf;
+    int result = ::recv(sockfd, &buf, 1, MSG_PEEK | MSG_DONTWAIT);
+    if (result == 0) {
+        return false;
+    } else if (result < 0) {
+        if (errno == EAGAIN || errno == EWOULDBLOCK) {
+            return true;
+        }
+        return false;
+    }
+
+    return true;
+}

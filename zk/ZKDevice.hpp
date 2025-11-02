@@ -58,6 +58,7 @@ public:
     bool endLiveCapture = false;
 
     // Functions
+	bool isConnected() const;
     operator bool() const;
     bool createSocket();
     std::vector<uint8_t> createTcpTop(const std::vector<uint8_t>& packet);

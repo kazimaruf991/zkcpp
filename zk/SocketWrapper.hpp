@@ -31,7 +31,7 @@ public:
     void close();
     void setTimeout(int seconds);
     std::vector<uint8_t> recvExact(size_t size);
-
+	bool isConnected() const;
 
 private:
     int sockfd;

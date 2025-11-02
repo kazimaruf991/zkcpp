@@ -76,6 +76,10 @@ ZKDevice::ZKDevice(const std::string& ip)
 	: ZKDevice(ip, 4370, 60, 0, false, false, false, "UTF-8") {
 }
 
+bool ZKDevice::isConnected() const {
+    return isConnect && sock.isConnected();
+}
+
 std::vector<uint8_t> ZKDevice::makeCommKey(uint32_t key, uint32_t session_id, uint8_t ticks) {
 	uint32_t k = 0;
 
@@ -573,8 +577,8 @@ std::tm ZKDevice::decodeTime(const std::vector<uint8_t>& t) {
 	d.tm_min = raw % 60;  raw /= 60;
 	d.tm_hour = raw % 24;  raw /= 24;
 	d.tm_mday = raw % 31 + 1; raw /= 31;
-	d.tm_mon = raw % 12 + 1; raw /= 12;
-	d.tm_year = raw + 2000;
+	d.tm_mon = raw % 12; raw /= 12;
+	d.tm_year = raw + 100;
 
 	return d;
 }
