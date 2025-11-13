@@ -1,6 +1,6 @@
 # zkcpp — C++ Port of pyzk for ZKTeco Devices
 
-zkcpp is a C++ library that ports the core functionality of the [pyzk](https://github.com/fananimi/pyzk) Python project to native C++.
+**zkcpp** is a C++ library that ports the core functionality of the [pyzk](https://github.com/fananimi/pyzk) Python project to native C++.
 
 ---
 
@@ -12,6 +12,7 @@ zkcpp is a C++ library that ports the core functionality of the [pyzk](https://g
 pkg update
 pkg install clang make cmake git
 ```
+
 ---
 
 ### 🐧 Linux (Ubuntu/Debian)
@@ -20,6 +21,7 @@ pkg install clang make cmake git
 sudo apt update
 sudo apt install clang make cmake git
 ```
+
 ---
 
 ## 🛠️ Build & Run
@@ -30,6 +32,7 @@ cd zkcpp
 make
 ./build/output/zkapp
 ```
+
 ⚠️ Before building, open [`main.cpp`](main.cpp) and set your device's IP address, port & password:
 
 ```cpp
@@ -41,3 +44,5 @@ int password = 0;
 ---
 
 📄 Check [`main.cpp`](main.cpp) for example usage and basic interaction flow with the device. It demonstrates how to connect, disable/enable the device, and fetch logs.
+
+📱 For Android integration, see the companion project: [AMS-Demo](https://github.com/kazimaruf991/AMS-Demo). It shows how to use `zkcpp` with JNI and native helper classes inside an Android app.
