@@ -45,4 +45,4 @@ int password = 0;
 
 📄 Check [`main.cpp`](main.cpp) for example usage and basic interaction flow with the device. It demonstrates how to connect, disable/enable the device, and fetch logs.
 
-📱 For Android integration, see the companion project: [AMS-Demo](https://github.com/kazimaruf991/AMS-Demo). It shows how to use `zkcpp` with JNI and native helper classes inside an Android app.
+📱 For Android integration, see the demo project: [AMS-Demo](https://github.com/kazimaruf991/AMS-Demo). It shows how to use `zkcpp` with JNI and native helper classes inside an Android app.
